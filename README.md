@@ -27,6 +27,11 @@ Then open http://127.0.0.1:8090. Opening `index.html` straight from the disk als
 | `fonts/` | IBM Plex Sans, Sans Arabic and Mono (SIL Open Font License, see `fonts/OFL.txt`). |
 | `img/` | Real screenshots of the app (the study progress in them is demo data) and `og.jpg` for link previews. |
 
+## Design
+
+The brand and launch-kit boards (Claude Design) are in [`design/launch-kit/`](design/launch-kit/) — sources plus a
+preview image of each board.
+
 ## Rules
 
 - Real screenshots and real counts only. When the counts change, update `data-count` in `index.html` and the

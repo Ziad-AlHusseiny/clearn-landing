@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onboarding prototype</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div dir="{{dir}}" lang="{{lang}}" style="width: 390px; height: 844px; box-sizing: border-box; position: relative; overflow: hidden; background: #F5F6F8; color: #141922; display: flex; flex-direction: column; font-family: {{font}}">
+  <div style="height: 64px; flex: 0 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between">
+    <sc-if value="{{s0}}" hint-placeholder-val="{{ true }}">
+      <div style="display: flex; align-items: center; gap: 10px">
+        <svg width="34" height="34" viewBox="0 0 32 32" role="img" aria-label="Clearn logo"><rect width="32" height="32" rx="9" fill="#0A6E6A"></rect><rect x="7.5" y="18" width="4.5" height="7" rx="1.5" fill="#fff" opacity="0.55"></rect><rect x="13.75" y="13" width="4.5" height="12" rx="1.5" fill="#fff" opacity="0.8"></rect><rect x="20" y="7" width="4.5" height="18" rx="1.5" fill="#fff"></rect></svg>
+        <span style="font-family: 'IBM Plex Sans', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.02em">Clearn</span>
+      </div>
+    </sc-if>
+    <sc-if value="{{notS0}}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{back}}" aria-label="{{t.back}}" style="width: 44px; height: 44px; border-radius: 12px; border: 1px solid #DDE2E8; background: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141922" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform: {{backFlip}}"><path d="M15 18l-6-6 6-6"></path></svg>
+      </button>
+    </sc-if>
+    <div aria-label="{{t.progress}}" style="display: flex; align-items: flex-end; gap: 4px; height: 30px">
+      <sc-for list="{{bars}}" as="b" hint-placeholder-count="5"><span style="width: 8px; border-radius: 3px; height: {{b.h}}; background: {{b.c}}"></span></sc-for>
+    </div>
+  </div>
+
+  <div style="flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 8px 20px 16px; display: flex; flex-direction: column; gap: 16px">
+
+    <sc-if value="{{s0}}" hint-placeholder-val="{{ true }}">
+      <div style="display: flex; flex-direction: column; gap: 18px; padding-top: 20px">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; color: #535D6B">FALL 2026–27 · THIS TERM</span>
+        <h1 style="margin: 0; font-size: 40px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 700">{{t.wTitle}}</h1>
+        <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3B4452">{{t.wBody}}</p>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 8px">
+          <sc-for list="{{t.proofs}}" as="p" hint-placeholder-count="2">
+            <div style="display: flex; align-items: center; gap: 12px; background: #FFFFFF; border: 1px solid #DDE2E8; border-radius: 14px; padding: 14px">
+              <span style="width: 26px; height: 26px; flex: 0 0 auto; border-radius: 8px; background: #E9F5F3; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A6E6A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></span>
+              <span style="font-size: 16px; font-weight: 500">{{p}}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{s1}}" hint-placeholder-val="{{ false }}">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <h1 style="margin: 0; font-size: 28px; line-height: 1.2; letter-spacing: -0.01em">{{t.sTitle}}</h1>
+        <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3B4452">{{t.sBody}}</p>
+        <span style="font-size: 14px; font-weight: 600; color: #0A6E6A">{{pickedLabel}}</span>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <sc-for list="{{subjects}}" as="s" hint-placeholder-count="8">
+            <button onClick="{{s.pick}}" aria-pressed="{{s.on}}" style="display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 8px 12px; border-radius: 12px; cursor: pointer; text-align: start; font-family: inherit; color: #141922; {{s.box}}">
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; width: 40px; height: 32px; flex: 0 0 auto; border-radius: 8px; display: flex; align-items: center; justify-content: center; {{s.code}}">{{s.c}}</span>
+              <span style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 1px"><span dir="ltr" style="font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; font-weight: 600; text-align: start">{{s.n}}</span><span style="font-size: 13px; color: #535D6B">{{s.q}}</span></span>
+              <span style="width: 22px; height: 22px; flex: 0 0 auto; border-radius: 11px; display: flex; align-items: center; justify-content: center; {{s.dot}}"><sc-if value="{{s.on}}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></sc-if></span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{s2}}" hint-placeholder-val="{{ false }}">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #0A6E6A">{{t.tKicker}}</span>
+        <sc-if value="{{notAnswered}}" hint-placeholder-val="{{ true }}"><h1 style="margin: 0; font-size: 26px; line-height: 1.2">{{t.tTitle}}</h1></sc-if>
+        <div dir="ltr" lang="en" style="display: flex; flex-direction: column; gap: 8px; font-family: 'IBM Plex Sans', sans-serif; background: #FFFFFF; border: 1px solid #DDE2E8; border-radius: 16px; padding: 14px">
+          <div style="display: flex; gap: 8px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #2459C7; background: #E8EFFC; border-radius: 999px; padding: 4px 10px">CORE · MCQ</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; border: 1px solid #C9D0D8; border-radius: 999px; padding: 3px 10px">L05 · p.4</span></div>
+          <p style="margin: 0; font-size: 16px; line-height: 1.45">Which protection mechanism ensures that no process can gain control of the CPU without eventually giving it back?</p>
+          <sc-for list="{{options}}" as="o" hint-placeholder-count="4">
+            <button onClick="{{o.pick}}" style="display: flex; gap: 10px; align-items: flex-start; padding: 10px; border-radius: 12px; cursor: pointer; text-align: left; font-family: inherit; color: #141922; {{o.box}}">
+              <span style="font-size: 13px; font-weight: 700; width: 26px; height: 26px; flex: 0 0 auto; border-radius: 7px; display: flex; align-items: center; justify-content: center; {{o.badge}}">{{o.l}}</span>
+              <span style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15px; font-weight: 500">{{o.text}}</span><sc-if value="{{o.showWhy}}" hint-placeholder-val="{{ false }}"><span style="font-size: 13px; line-height: 1.4; color: #3B4452">{{o.why}}</span></sc-if></span>
+            </button>
+          </sc-for>
+        </div>
+        <sc-if value="{{answered}}" hint-placeholder-val="{{ false }}">
+          <div style="border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 8px; {{fbBox}}">
+            <span style="font-size: 17px; font-weight: 700; color: {{fbInk}}">{{fbTitle}}</span>
+            <span style="font-size: 14px; line-height: 1.55">{{t.explain}}</span>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{s3}}" hint-placeholder-val="{{ false }}">
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <h1 style="margin: 0; font-size: 28px; line-height: 1.2; letter-spacing: -0.01em">{{t.pTitle}}</h1>
+        <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3B4452">{{t.pBody}}</p>
+        <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+          <sc-for list="{{mins}}" as="m" hint-placeholder-count="4">
+            <button onClick="{{m.pick}}" aria-pressed="{{m.on}}" style="height: 64px; border-radius: 12px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0; font-family: inherit; {{m.box}}"><span style="font-size: 20px; font-weight: 700">{{m.v}}</span><span style="font-size: 12px">{{t.min}}</span></button>
+          </sc-for>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #DDE2E8; border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-size: 15px; font-weight: 700">{{t.pList}}</span>
+          <sc-for list="{{todayList}}" as="i" hint-placeholder-count="3">
+            <div style="display: flex; align-items: center; gap: 10px; font-size: 15px"><span style="width: 18px; height: 18px; flex: 0 0 auto; border-radius: 9px; border: 2px solid #C9D0D8; box-sizing: border-box"></span><span>{{i}}</span></div>
+          </sc-for>
+          <span style="font-size: 13px; color: #535D6B; line-height: 1.45">{{t.pNote}}</span>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{s4}}" hint-placeholder-val="{{ false }}">
+      <div style="display: flex; flex-direction: column; gap: 14px; padding-top: 12px">
+        <h1 style="margin: 0; font-size: 32px; line-height: 1.15; letter-spacing: -0.01em">{{t.vTitle}}</h1>
+        <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #3B4452">{{t.vBody}}</p>
+        <div style="background: #141922; color: #E7EBF0; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 12px">
+          <sc-for list="{{summary}}" as="r" hint-placeholder-count="3">
+            <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px"><span style="color: #9BA6B4">{{r.k}}</span><span style="font-weight: 600; color: {{r.c}}">{{r.v}}</span></div>
+          </sc-for>
+        </div>
+        <span style="font-size: 13px; color: #535D6B; line-height: 1.45">{{t.vSmall}}</span>
+      </div>
+    </sc-if>
+  </div>
+
+  <div style="flex: 0 0 auto; padding: 12px 20px 20px; display: flex; flex-direction: column; gap: 4px; border-top: 1px solid #DDE2E8; background: #F5F6F8">
+    <button onClick="{{next}}" disabled="{{ctaOff}}" style="height: 52px; border-radius: 14px; border: 0; cursor: pointer; font-family: inherit; font-size: 17px; font-weight: 600; color: #FFFFFF; display: flex; align-items: center; justify-content: center; gap: 10px; background: {{ctaBg}}">{{cta}}</button>
+    <button onClick="{{secondary}}" style="height: 40px; border: 0; background: none; cursor: pointer; font-family: inherit; font-size: 14px; font-weight: 600; color: #0A6E6A">{{secondaryLabel}}</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"lang":{"editor":"enum","options":["en","ar"],"default":"en"},"step":{"editor":"int","min":0,"max":4,"default":0},"answer":{"editor":"enum","options":["","a","b","c","d"],"default":""},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    const step = Math.max(0, Math.min(4, Number(props.step) || 0));
+    this.state = {
+      step: step,
+      picked: step >= 1 ? ['co', 'os', 'cg', 'es'] : [],
+      answer: props.answer || null,
+      minutes: 45
+    };
+  }
+  renderVals() {
+    const lang = this.props.lang === 'ar' ? 'ar' : 'en';
+    const ar = lang === 'ar';
+    const s = this.state;
+    const T = {
+      en: {
+        back: 'Back', progress: 'Step ' + (s.step + 1) + ' of 5',
+        wTitle: 'Your lectures, made clear.',
+        wBody: 'Short lessons in simple English and Egyptian Arabic, practice that explains every answer, and a plan for today.',
+        proofs: ['2,756 practice questions', 'Every answer shows its slide page'],
+        sTitle: 'Which subjects do you take?', sBody: 'This term’s subjects. Only these show up, and you can change them any time.',
+        tKicker: 'TRY ONE · OPERATING SYSTEMS', tTitle: 'One real question, before anything else.',
+        right: 'Correct', wrong: 'Not quite',
+        explain: 'The timer ensures no process can keep the CPU forever: when it expires, an interrupt gives control back to the OS (Lecture 4).',
+        pTitle: 'How long can you study a day?', pBody: 'Clearn splits the lectures into a short list for each day.',
+        min: 'min', pList: 'Today’s list would be', pNote: 'Example for Operating Systems. After a few study days, the list fits your real pace.',
+        vTitle: 'Keep what you just did.', vBody: 'Sign in with Google so your answers, plan and streak follow you to any device.',
+        vSmall: 'Google is only used to sign you in. Independent student project.',
+        kFirst: 'First question', kSubjects: 'Subjects', kDaily: 'Daily time',
+        vRight: 'Right', vWrong: 'Answered — now in your review', vSkip: 'Skipped',
+        cta: ['Pick my subjects', 'Continue', 'Continue', 'Continue', 'Continue with Google'],
+        sec: ['I already have an account', 'Select all', 'Skip', 'Decide later', 'Start over'],
+        picked: (n) => n + ' selected',
+        q: (n) => n + ' questions',
+        list: {
+          20: ['1 lesson · 4 min', '5 questions · 6 min', 'Due flashcards · 8 min'],
+          30: ['2 lessons · 9 min', '10 questions · 12 min', 'Due flashcards · 9 min'],
+          45: ['3 lessons · 14 min', '15 questions · 18 min', 'Due flashcards · 12 min'],
+          60: ['4 lessons · 19 min', '20 questions · 24 min', 'Due flashcards · 15 min']
+        }
+      },
+      ar: {
+        back: 'رجوع', progress: 'خطوة ' + (s.step + 1) + ' من 5',
+        wTitle: 'محاضراتك، بقت مفهومة.',
+        wBody: 'دروس قصيرة بالإنجليزي البسيط والعربي المصري، وأسئلة بتشرح كل إجابة، وخطة للنهارده.',
+        proofs: ['2,756 سؤال تدريب', 'كل إجابة معاها رقم صفحة السلايد'],
+        sTitle: 'بتاخد أنهي مواد؟', sBody: 'دي مواد الترم ده. هي بس اللي هتظهرلك، وتقدر تغيّرها في أي وقت.',
+        tKicker: 'جرّب سؤال · OPERATING SYSTEMS', tTitle: 'سؤال حقيقي، قبل أي حاجة.',
+        right: 'صح', wrong: 'مش بالظبط',
+        explain: 'الـ timer بيضمن إن مفيش process تفضل ماسكة الـ CPU على طول: لما يخلص، بيحصل interrupt يرجّع التحكّم لنظام التشغيل (المحاضرة الرابعة).',
+        pTitle: 'تقدر تذاكر قد إيه في اليوم؟', pBody: 'Clearn بيقسّم المحاضرات لليستة قصيرة كل يوم.',
+        min: 'دقيقة', pList: 'ليستة النهارده هتبقى', pNote: 'مثال لمادة Operating Systems. بعد كام يوم مذاكرة، الليستة بتظبط نفسها على سرعتك الحقيقية.',
+        vTitle: 'احفظ اللي عملته.', vBody: 'سجّل بـ Google عشان إجاباتك وخطتك والـ streak يفضلوا معاك على أي جهاز.',
+        vSmall: 'Google بيُستخدم لتسجيل الدخول بس. مشروع طلابي مستقل.',
+        kFirst: 'أول سؤال', kSubjects: 'المواد', kDaily: 'وقتك في اليوم',
+        vRight: 'صح', vWrong: 'اتحفظ في المراجعة', vSkip: 'اتخطّى',
+        cta: ['اختار موادي', 'كمّل', 'كمّل', 'كمّل', 'كمّل بـ Google'],
+        sec: ['عندي حساب بالفعل', 'اختار الكل', 'تخطّي', 'بعدين', 'ابدأ من الأول'],
+        picked: (n) => n + ' مختارة',
+        q: (n) => n + ' سؤال',
+        list: {
+          20: ['درس واحد · 4 دقايق', '5 أسئلة · 6 دقايق', 'الفلاش كاردز المستحقة · 8 دقايق'],
+          30: ['درسين · 9 دقايق', '10 أسئلة · 12 دقيقة', 'الفلاش كاردز المستحقة · 9 دقايق'],
+          45: ['3 دروس · 14 دقيقة', '15 سؤال · 18 دقيقة', 'الفلاش كاردز المستحقة · 12 دقيقة'],
+          60: ['4 دروس · 19 دقيقة', '20 سؤال · 24 دقيقة', 'الفلاش كاردز المستحقة · 15 دقيقة']
+        }
+      }
+    };
+    const t = T[lang];
+    const go = (step) => this.setState({ step: Math.max(0, Math.min(4, step)) });
+    const SUBJ = [
+      ['co', 'CO', 'Computer Organization', 497], ['os', 'OS', 'Operating Systems', 619],
+      ['dsp', 'DSP', 'Digital Signal Processing', 260], ['cg', 'CG', 'Computer Graphics', 320],
+      ['es', 'ES', 'Embedded Systems', 372], ['acn', 'ACN', 'Advanced Computer Networks', 203],
+      ['ct', 'CT', 'Communication Technology', 300], ['lse', 'LSE', 'Labs in Software Engineering', 185]
+    ];
+    const subjects = SUBJ.map(([id, c, n, q]) => {
+      const on = s.picked.indexOf(id) >= 0;
+      return {
+        c: c, n: n, q: t.q(q.toLocaleString('en-US')), on: on,
+        box: on ? 'border: 2px solid #0A6E6A; background: #E9F5F3;' : 'border: 1px solid #DDE2E8; background: #FFFFFF;',
+        code: on ? 'background: #0A6E6A; color: #FFFFFF;' : 'background: #EEF1F4; color: #3B4452;',
+        dot: on ? 'background: #0A6E6A;' : 'border: 2px solid #C9D0D8; box-sizing: border-box;',
+        pick: () => this.setState({ picked: on ? s.picked.filter((x) => x !== id) : s.picked.concat([id]) })
+      };
+    });
+    const OPTS = [
+      ['a', 'Memory-addressing hardware', 'It keeps each process inside its own address space; it does not take the CPU back.'],
+      ['b', 'Device-control registers', 'Hiding them from users protects peripheral devices, not CPU time.'],
+      ['c', 'The user ID of the process', 'A user ID tells the OS who owns the process; it does not limit CPU time.'],
+      ['d', 'The timer', 'Correct — when the timer runs out, control returns to the OS.']
+    ];
+    const answered = !!s.answer;
+    const options = OPTS.map(([id, text, why]) => {
+      const right = id === 'd';
+      const mine = s.answer === id;
+      let box = 'border: 1px solid #DDE2E8; background: #FFFFFF;';
+      let badge = 'background: #EEF1F4; color: #141922;';
+      if (answered && right) { box = 'border: 2px solid #0A6E6A; background: #E9F5F3;'; badge = 'background: #0A6E6A; color: #FFFFFF;'; }
+      else if (answered && mine) { box = 'border: 2px solid #B4361E; background: #FFF1EC;'; badge = 'background: #B4361E; color: #FFFFFF;'; }
+      else if (answered) { box = 'border: 1px solid #DDE2E8; background: #FFFFFF; opacity: 0.6;'; }
+      return { l: id.toUpperCase(), text: text, why: why, showWhy: answered && (right || mine), box: box, badge: badge, pick: () => { if (!this.state.answer) this.setState({ answer: id }); } };
+    });
+    const mins = [20, 30, 45, 60].map((v) => ({
+      v: v, on: s.minutes === v,
+      box: s.minutes === v ? 'border: 2px solid #0A6E6A; background: #E9F5F3; color: #075652;' : 'border: 1px solid #DDE2E8; background: #FFFFFF; color: #141922;',
+      pick: () => this.setState({ minutes: v })
+    }));
+    const right = s.answer === 'd';
+    const firstVal = !s.answer ? t.vSkip : right ? t.vRight : t.vWrong;
+    const bars = [0, 1, 2, 3, 4].map((i) => ({ h: (10 + i * 5) + 'px', c: i <= s.step ? '#0A6E6A' : '#DDE2E8' }));
+    const ctaOff = s.step === 1 && s.picked.length === 0 || s.step === 2 && !answered;
+    return {
+      lang: lang, dir: ar ? 'rtl' : 'ltr',
+      font: ar ? "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif" : "'IBM Plex Sans', 'IBM Plex Sans Arabic', sans-serif",
+      t: t, bars: bars, backFlip: ar ? 'scaleX(-1)' : 'none',
+      s0: s.step === 0, notS0: s.step !== 0, s1: s.step === 1, s2: s.step === 2, s3: s.step === 3, s4: s.step === 4,
+      subjects: subjects, pickedLabel: t.picked(s.picked.length),
+      options: options, answered: answered, notAnswered: !answered,
+      fbTitle: right ? t.right : t.wrong, fbInk: right ? '#075652' : '#B4361E',
+      fbBox: right ? 'background: #E9F5F3; border: 1px solid #CFE5E2;' : 'background: #FFF1EC; border: 1px solid #F1D3C9;',
+      mins: mins, todayList: t.list[s.minutes],
+      summary: [
+        { k: t.kFirst, v: firstVal, c: right ? '#3CC4B6' : '#F0B44C' },
+        { k: t.kSubjects, v: String(s.picked.length), c: '#E7EBF0' },
+        { k: t.kDaily, v: s.minutes + ' ' + t.min, c: '#E7EBF0' }
+      ],
+      cta: t.cta[s.step], ctaOff: ctaOff, ctaBg: ctaOff ? '#84B8B5' : '#0A6E6A',
+      secondaryLabel: t.sec[s.step],
+      next: () => { if (s.step === 4) this.setState({ step: 0, picked: [], answer: null, minutes: 45 }); else go(s.step + 1); },
+      back: () => go(s.step - 1),
+      secondary: () => {
+        if (s.step === 1) this.setState({ picked: SUBJ.map((x) => x[0]) });
+        else if (s.step === 2 || s.step === 3) go(s.step + 1);
+        else if (s.step === 4) this.setState({ step: 0, picked: [], answer: null, minutes: 45 });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

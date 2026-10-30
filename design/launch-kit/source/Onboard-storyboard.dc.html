@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onboarding storyboard</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 2230px; height: 2140px; box-sizing: border-box; font-family: 'IBM Plex Sans', 'IBM Plex Sans Arabic', sans-serif; color: #141922; background: #FFFFFF; padding: 56px 60px; display: flex; flex-direction: column; gap: 40px">
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 60px">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.08em; color: #535D6B">PROTOTYPE · NOT THE LIVE APP YET</span>
+      <h1 style="margin: 0; font-size: 44px; letter-spacing: -0.03em">Feel the value before the sign-in.</h1>
+    </div>
+    <p style="margin: 0; max-width: 1000px; font-size: 18px; line-height: 1.55; color: #3B4452">Today the live app shows two screens (subjects, plan), then asks for Google. This version adds a welcome and <b>one real question</b> before sign-in, so the first thing a new student gets is a right answer and its reason — then “keep what you just did” is a natural reason to sign in.</p>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.08em; color: #0A6E6A">ENGLISH · RIGHT ANSWER PATH</span>
+    <div style="display: flex; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 12px"><div style="border: 1px solid #DDE2E8; border-radius: 28px; overflow: hidden; width: 390px; height: 844px"><dc-import name="Onboard-flow" lang="en" step="0" hint-size="390px,844px"></dc-import></div><span style="font-size: 17px; font-weight: 600">1 · Welcome</span></div>
+      <div style="display: flex; flex-direction: column; gap: 12px"><div style="border: 1px solid #DDE2E8; border-radius: 28px; overflow: hidden; width: 390px; height: 844px"><dc-import name="Onboard-flow" lang="en" step="1" hint-size="390px,844px"></dc-import></div><span style="font-size: 17px; font-weight: 600">2 · This term’s subjects</span></div>
+      <div style="display: flex; flex-direction: column; gap: 12px"><div style="border: 1px solid #DDE2E8; border-radius: 28px; overflow: hidden; width: 390px; height: 844px"><dc-import name="Onboard-flow" lang="en" step="2" answer="d" hint-size="390px,844px"></dc-import></div><span style="font-size: 17px; font-weight: 600">3 · One real question</span></div>
+      <div style="display: flex; flex-direction: column; gap: 12px"><div style="border: 1px solid #DDE2E8; border-radius: 28px; overflow: hidden; width: 390px; height: 844px"><dc-import name="Onboard-flow" lang="en" step="3" answer="d" hint-size="390px,844px"></dc-import></div><span style="font-size: 17px; font-weight: 600">4 · Daily time → today’s list</span></div>
+      <div style="display: flex; flex-direction: column; gap: 12px"><div style="border: 1px solid #DDE2E8; border-radius: 28px; overflow: hidden; width: 390px; height: 844px"><dc-import name="Onboard-flow" lang="en" step="4" answer="d" hint-size="390px,844px"></dc-import></div><span style="font-size: 17px; font-weight: 600">5 · Save with Google</span></div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.08em; color: #B4361E">ARABIC · WRONG ANSWER PATH (STILL A WIN: THE REASON + IT GOES TO REVIEW)</span>
+    <div style="display: flex; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 12px"><div style="border: 1px solid #DDE2E8; border-radius: 28px; overflow: hidden; width: 390px; height: 844px"><dc-import name="Onboard-flow" lang="ar" step="0" hint-size="390px,844px"></dc-import></div><span style="font-size: 17px; font-weight: 600">1 · الترحيب</span></div>
+      <div style="display: flex; flex-direction: column; gap: 12px"><div style="border: 1px solid #DDE2E8; border-radius: 28px; overflow: hidden; width: 390px; height: 844px"><dc-import name="Onboard-flow" lang="ar" step="1" hint-size="390px,844px"></dc-import></div><span style="font-size: 17px; font-weight: 600">2 · مواد الترم</span></div>
+      <div style="display: flex; flex-direction: column; gap: 12px"><div style="border: 1px solid #DDE2E8; border-radius: 28px; overflow: hidden; width: 390px; height: 844px"><dc-import name="Onboard-flow" lang="ar" step="2" answer="a" hint-size="390px,844px"></dc-import></div><span style="font-size: 17px; font-weight: 600">3 · سؤال حقيقي</span></div>
+      <div style="display: flex; flex-direction: column; gap: 12px"><div style="border: 1px solid #DDE2E8; border-radius: 28px; overflow: hidden; width: 390px; height: 844px"><dc-import name="Onboard-flow" lang="ar" step="3" answer="a" hint-size="390px,844px"></dc-import></div><span style="font-size: 17px; font-weight: 600">4 · وقتك في اليوم</span></div>
+      <div style="display: flex; flex-direction: column; gap: 12px"><div style="border: 1px solid #DDE2E8; border-radius: 28px; overflow: hidden; width: 390px; height: 844px"><dc-import name="Onboard-flow" lang="ar" step="4" answer="a" hint-size="390px,844px"></dc-import></div><span style="font-size: 17px; font-weight: 600">5 · احفظ بـ Google</span></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":2230,"height":2140}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

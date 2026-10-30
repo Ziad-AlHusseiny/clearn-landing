@@ -1,0 +1,56 @@
+{
+  "v": 3,
+  "createdOnFiles": { "v": 1, "at": "2026-10-29T18:30:00Z" },
+  "title": "Clearn — Launch kit",
+  "launch": { "view": "canvas", "page": "brand" },
+  "pages": [
+    { "id": "brand", "name": "1 · Brand & strategy" },
+    { "id": "showcase", "name": "2 · Product showcase kit" },
+    { "id": "onboarding", "name": "3 · Onboarding" },
+    { "id": "campaign", "name": "4 · Launch campaign" }
+  ],
+  "boards": {
+    "Main.dc.html": { "x": 0, "y": 0, "w": 1600, "h": 1000, "title": "Cover · creative vision", "page": "brand" },
+    "Directions.dc.html": { "x": 1680, "y": 0, "w": 1600, "h": 1000, "title": "Three creative directions", "page": "brand" },
+    "Identity.dc.html": { "x": 3360, "y": 0, "w": 1600, "h": 1000, "title": "Brand kit", "page": "brand" },
+    "Priorities.dc.html": { "x": 0, "y": 1380, "w": 1600, "h": 1000, "title": "Ideas, scored", "page": "brand" },
+    "Launch-plan.dc.html": { "x": 1680, "y": 1380, "w": 1600, "h": 1000, "title": "Launch, distribution & budget", "page": "brand" },
+
+    "Showcase-hero.dc.html": { "x": 0, "y": 0, "w": 1920, "h": 1080, "title": "Hero · 1920×1080", "page": "showcase" },
+    "Numbers.dc.html": { "x": 2000, "y": 0, "w": 1080, "h": 1350, "title": "Post · by the numbers", "page": "showcase" },
+    "Feature-trust.dc.html": { "x": 3160, "y": 0, "w": 1080, "h": 1350, "title": "Post · slide page on every answer", "page": "showcase" },
+    "Feature-practice.dc.html": { "x": 0, "y": 1730, "w": 1080, "h": 1350, "title": "Post · practice that explains", "page": "showcase" },
+    "Feature-bilingual.dc.html": { "x": 1160, "y": 1730, "w": 1080, "h": 1350, "title": "Post · English + Arabic", "page": "showcase" },
+    "Feature-plan.dc.html": { "x": 2320, "y": 1730, "w": 1080, "h": 1350, "title": "Post · plan that learns", "page": "showcase" },
+    "Feature-challenge.dc.html": { "x": 3480, "y": 1730, "w": 1080, "h": 1350, "title": "Post · challenge a friend", "page": "showcase" },
+
+    "Onboard-flow.dc.html": { "x": 0, "y": 0, "w": 390, "h": 844, "title": "Prototype · press Play", "page": "onboarding", "is_interactive": true },
+    "Onboard-storyboard.dc.html": { "x": 470, "y": 0, "w": 2230, "h": 2140, "title": "All five steps · EN + AR", "page": "onboarding" },
+    "Onboard-tour.dc.html": { "x": 0, "y": 2520, "w": 1600, "h": 1000, "title": "First dashboard visit · 3 tips", "page": "onboarding" },
+    "First-week.dc.html": { "x": 1680, "y": 2520, "w": 1600, "h": 1000, "title": "The first seven days", "page": "onboarding" },
+
+    "Campaign-key.dc.html": { "x": 0, "y": 0, "w": 1080, "h": 1350, "title": "Key visual · launch post", "page": "campaign" },
+    "Story-1.dc.html": { "x": 1160, "y": 0, "w": 1080, "h": 1920, "title": "Story 1 · Clear it", "page": "campaign" },
+    "Story-2.dc.html": { "x": 2320, "y": 0, "w": 1080, "h": 1920, "title": "Story 2 · Learn it", "page": "campaign" },
+    "Story-3.dc.html": { "x": 3480, "y": 0, "w": 1080, "h": 1920, "title": "Story 3 · Earn it", "page": "campaign" },
+    "Exam-drop.dc.html": { "x": 0, "y": 2300, "w": 1080, "h": 1350, "title": "Template · exam review is out", "page": "campaign" },
+    "Poster-A4.dc.html": { "x": 1160, "y": 2300, "w": 794, "h": 1123, "title": "Campus poster · A4 (print)", "page": "campaign" }
+  },
+  "order": [
+    "Main.dc.html", "Directions.dc.html", "Identity.dc.html", "Priorities.dc.html", "Launch-plan.dc.html",
+    "Showcase-hero.dc.html", "Numbers.dc.html", "Feature-trust.dc.html", "Feature-practice.dc.html", "Feature-bilingual.dc.html", "Feature-plan.dc.html", "Feature-challenge.dc.html",
+    "Onboard-flow.dc.html", "Onboard-storyboard.dc.html", "Onboard-tour.dc.html", "First-week.dc.html",
+    "Campaign-key.dc.html", "Story-1.dc.html", "Story-2.dc.html", "Story-3.dc.html", "Exam-drop.dc.html", "Poster-A4.dc.html"
+  ],
+  "notes": {
+    "brandT1": { "x": 0, "y": -260, "text": "Brand & strategy", "kind": "title1", "maxW": 4960, "page": "brand" },
+    "brandT2": { "x": 0, "y": 1120, "text": "What to make first, and how it reaches students", "kind": "title1", "maxW": 3280, "page": "brand" },
+    "showT1": { "x": 0, "y": -260, "text": "Product showcase kit — real screens", "kind": "title1", "maxW": 4240, "page": "showcase" },
+    "showT2": { "x": 0, "y": 1470, "text": "Feature series · 1080×1350 posts", "kind": "title1", "maxW": 4560, "page": "showcase" },
+    "onbT1": { "x": 0, "y": -260, "text": "Onboarding — a first win in 60 seconds", "kind": "title1", "maxW": 2700, "page": "onboarding" },
+    "onbT2": { "x": 0, "y": 2260, "text": "First visit & first week", "kind": "title1", "maxW": 3280, "page": "onboarding" },
+    "campT1": { "x": 0, "y": -260, "text": "Launch campaign — «خليها Clear»", "kind": "title1", "maxW": 4560, "page": "campaign" },
+    "campT2": { "x": 0, "y": 2040, "text": "Always on: exam drops & campus", "kind": "title1", "maxW": 1954, "page": "campaign" }
+  },
+  "designSystems": []
+}
