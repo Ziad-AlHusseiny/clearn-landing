@@ -1,0 +1,327 @@
+/* Clearn landing page — every visible string in English and Egyptian Arabic.
+   Facts here are checked against the app (D-69): counts from content/ on 29 Oct 2026, features from src/.
+   No price claims and no semester number (D-68). Subject names stay in English in Arabic text. */
+window.CLEARN_I18N = {
+  en: {
+    'meta.title': 'Clearn — Clear it. Learn it. Earn it.',
+    skip: 'Skip to content',
+    'nav.how': 'How it works',
+    'nav.try': 'Try a question',
+    'nav.features': 'Features',
+    'nav.lang': 'عربي',
+    'nav.langLabel': 'Switch to Arabic',
+    'cta.start': 'Start with Google',
+    'cta.short': 'Start',
+
+    'hero.eyebrow': 'Every term · now: Fall 2026–27',
+    'hero.title': 'Every lecture.<br>Made <mark>clear.</mark>',
+    'hero.sub':
+      'Short lessons in simple English and Egyptian Arabic. Practice questions that explain every answer. A daily plan that learns your pace.',
+    'hero.secondary': 'See how it works',
+    'hero.streak': '7-day streak',
+    'hero.correct': 'Correct — the timer',
+    'hero.scroll': 'Scroll',
+
+    'marquee.label': '8 subjects this term',
+
+    'how.kicker': 'How it works',
+    'how.s1.k': '01 · Clear it',
+    'how.s1.t': 'Clear it.',
+    'how.s1.p': 'Each lecture becomes short lessons — one idea per lesson, in simple words, with the key points at the end.',
+    'how.s2.k': '02 · Learn it',
+    'how.s2.t': 'Learn it.',
+    'how.s2.p': 'Practice questions tell you why each option is right or wrong. Flashcards come back when it is time to review them.',
+    'how.s3.k': '03 · Earn it',
+    'how.s3.t': 'Earn it.',
+    'how.s3.p': 'Keep your streak, climb a rank that never drops, and challenge friends with the same questions.',
+
+    statement:
+      'Slides are long. Exams come fast. Clearn turns every lecture into <em>short lessons</em>, <em>real practice</em> and <em>a plan for today</em> — and every answer shows the slide page it came from.',
+
+    'proof.kicker': 'Trust every answer',
+    'proof.title': 'Every answer shows its slide page.',
+    'proof.p':
+      'Lessons, flashcards and questions carry a chip like <code>L04 · p.5</code> — Lecture 4, page 5. Tap it, see the slide, and check it yourself.',
+    'proof.callT': 'Lecture 4 · page 5',
+    'proof.callP': 'Tap the chip to open the slide.',
+
+    'try.kicker': 'Try one real question',
+    'try.title': 'Pick an answer.<br>See <mark>why.</mark>',
+    'try.p':
+      'This one is from Operating Systems, Lecture 5. After you answer, every option shows its reason — like all 2,756 questions in Clearn.',
+    'try.toAr': 'Show in Arabic',
+    'try.toEn': 'Show in English',
+    'try.correct': 'Correct.',
+    'try.wrong': 'Not quite.',
+    'try.again': 'Try again',
+    'try.yours': 'Your answer',
+    'try.right': 'Correct answer',
+    'try.group': 'Answer options',
+
+    'numbers.kicker': 'This term, counted',
+    'numbers.title': 'Your term,<br>already <mark>organised.</mark>',
+    'numbers.n1': 'practice questions, each with the reason behind every option',
+    'numbers.n2': 'short lessons in simple English and Egyptian Arabic',
+    'numbers.n3': 'flashcards with spaced review',
+    'numbers.n4': 'subjects this term, with more lectures on the way',
+    'numbers.note': 'Fall 2026–27 · counted on 29 Oct 2026 · more come with every new lecture',
+
+    'lang.kicker': 'Your language, your theme',
+    'lang.title': 'English or <span lang="ar">عربي</span>.<br>Light or dark.',
+    'lang.p':
+      'Every lesson is written in simple English and in natural Egyptian Arabic. Technical terms stay in English and get explained.',
+    'lang.l1': 'Switch language any time — the whole app follows',
+    'lang.l2': 'Questions stay in English, like the exam, with a translate button',
+    'lang.l3': 'Light and dark mode for late-night study',
+    'lang.drag': 'Drag to compare',
+    'lang.a': 'English · light',
+    'lang.b': 'عربي · dark',
+
+    'plan.kicker': 'A plan for today',
+    'plan.title': 'A daily plan that <mark>learns your pace.</mark>',
+    'plan.p':
+      'Tell it your daily time and exam dates once. Clearn spreads the remaining lessons and practice over your study days.',
+    'plan.s1': "<b>Today's list</b> — due flashcards, lessons and practice",
+    'plan.s2': '<b>Your real pace</b> — learned from your last 21 days',
+    'plan.s3': '<b>Spaced flashcards</b> — they come back on time, so you remember',
+    'plan.s4': '<b>Will you finish on time?</b> — it tells you before the exam does',
+
+    'prep.kicker': 'Exam season',
+    'prep.title': 'Quiz coming?<br>Get the <mark>review.</mark>',
+    'prep.p': 'Each review covers exactly the lectures in the quiz.',
+    'prep.l1': '<b>Must-know list</b> — if you only have 10 minutes',
+    'prep.l2': '<b>Summary and diagrams</b> for the hard ideas',
+    'prep.l3': '<b>The traps</b> that catch people',
+    'prep.l4': '<b>New, harder questions</b> and a timed mock exam',
+    'prep.note': '4 Quiz 1 reviews this term so far.',
+
+    'gallery.kicker': 'Made for your phone',
+    'gallery.title': 'Your whole term, in your pocket.',
+    'g.1': 'Home · Arabic · dark',
+    'g.2': 'A lesson at night',
+    'g.3': 'Practice with reasons',
+    'g.4': 'Flashcards',
+    'g.5': 'Your plan',
+    'g.6': 'Exam review',
+    'g.7': 'Challenge a friend',
+    'g.8': 'First visit: pick your subjects',
+
+    'earn.kicker': 'Earn it',
+    'earn.title': 'Challenge a friend.<br><span class="amber">See who wins.</span>',
+    'earn.p':
+      'Send 10 questions as a link. Your friend plays the same questions without signing in — then can send a challenge back.',
+    'earn.c1': 'Daily streak',
+    'earn.c2': 'A rank that only goes up',
+    'earn.c3': 'Squads of up to 8',
+    'earn.c4': 'Weekly squad goal',
+    'earn.c5': 'A result card for your status',
+
+    'final.title': 'Make it <mark>clear.</mark>',
+    'final.p': "Sign in with Google and start with today's plan.",
+
+    'foot.tag': 'Clear it. Learn it. Earn it.',
+    'foot.disc': 'Independent student project · not an official EELU service.',
+    'foot.demo': 'Screens are from the real app; the study progress in them is demo data.',
+    'foot.terms': 'Terms',
+    'foot.privacy': 'Privacy',
+    'foot.by': 'Developed by',
+
+    'img.dash': "Clearn home on a laptop: today's plan, Quiz 1 reviews and your subjects",
+    'img.practice': 'A practice question on a phone, with the reason for each option',
+    'img.lesson': 'A short lesson about the four classes of interrupts, in dark mode',
+    'img.results': 'Results page with Challenge a friend: send on WhatsApp, result card, copy link',
+    'img.lessonDesktop': 'A lesson page with the source chip L04 · p.5 under the title',
+    'img.dashEn': 'Clearn home in English, light mode',
+    'img.dashAr': 'Clearn home in Arabic, dark mode',
+    'img.plan': "My study plan: today's plan with the finished items checked",
+    'img.pace': 'Your real pace, learned from the last 21 days: 48 min on a study day, and work takes you 0.6 times the estimate',
+    'img.cards': 'A flashcard with Again, Hard, Good and Easy buttons',
+    'img.prep': 'Quiz 1 review for Computer Graphics: must-know list, practice with answers, timed mock exam',
+    'img.card': 'Result card: Operating Systems Lecture 4, 8 out of 10. Can you beat 8/10?',
+    'img.onboard': 'First visit: pick the subjects you take',
+  },
+
+  ar: {
+    'meta.title': 'Clearn — Clear it. Learn it. Earn it.',
+    skip: 'انتقل للمحتوى',
+    'nav.how': 'بيشتغل إزاي',
+    'nav.try': 'جرّب سؤال',
+    'nav.features': 'المميزات',
+    'nav.lang': 'English',
+    'nav.langLabel': 'Switch to English',
+    'cta.start': 'ابدأ بحساب Google',
+    'cta.short': 'ابدأ',
+
+    'hero.eyebrow': 'لكل ترم · دلوقتي: Fall 2026–27',
+    'hero.title': 'كل محاضرة<br><mark>بقت واضحة.</mark>',
+    'hero.sub':
+      'دروس قصيرة بإنجليزي بسيط وعربي مصري. أسئلة تدريب بتشرح كل إجابة. وخطة يومية بتتعلّم السرعة اللي بتذاكر بيها.',
+    'hero.secondary': 'شوف بيشتغل إزاي',
+    'hero.streak': '7 أيام ورا بعض',
+    'hero.correct': 'صح — الـ timer',
+    'hero.scroll': 'انزل',
+
+    'marquee.label': '8 مواد الترم ده',
+
+    'how.kicker': 'بيشتغل إزاي',
+    'how.s1.k': '<bdi>01 · Clear it</bdi>',
+    'how.s1.t': 'افهمها.',
+    'how.s1.p': 'كل محاضرة بتتقسم لدروس قصيرة — فكرة واحدة في كل درس، بكلام بسيط، والنقط المهمة في الآخر.',
+    'how.s2.k': '<bdi>02 · Learn it</bdi>',
+    'how.s2.t': 'ذاكرها.',
+    'how.s2.p': 'أسئلة التدريب بتقولك ليه كل اختيار صح أو غلط. والـ flashcards بترجعلك في ميعاد مراجعتها.',
+    'how.s3.k': '<bdi>03 · Earn it</bdi>',
+    'how.s3.t': 'اكسبها.',
+    'how.s3.p': 'حافظ على الـ streak بتاعك، اطلع في رتبة مبتنزلش، وتحدّى صحابك بنفس الأسئلة.',
+
+    statement:
+      'السلايدات طويلة، والامتحانات بتيجي بسرعة. Clearn بيحوّل كل محاضرة لـ <em>دروس قصيرة</em> و<em>تدريب حقيقي</em> و<em>خطة لنهارده</em> — وكل إجابة بتوريك صفحة السلايد اللي جاية منها.',
+
+    'proof.kicker': 'ثق في كل إجابة',
+    'proof.title': 'كل إجابة معاها صفحة السلايد بتاعتها.',
+    'proof.p':
+      'الدروس والـ flashcards والأسئلة عليها علامة زي <code>L04 · p.5</code> — يعني المحاضرة 4، صفحة 5. دوس عليها، شوف السلايد، واتأكد بنفسك.',
+    'proof.callT': 'المحاضرة 4 · صفحة 5',
+    'proof.callP': 'دوس على العلامة يفتحلك السلايد.',
+
+    'try.kicker': 'جرّب سؤال حقيقي',
+    'try.title': 'اختار إجابة.<br>واعرف <mark>ليه.</mark>',
+    'try.p':
+      'السؤال ده من Operating Systems، المحاضرة 5. بعد ما تجاوب، كل اختيار هيظهر سببه — زي كل الـ 2,756 سؤال اللي في Clearn.',
+    'try.toAr': 'ترجم',
+    'try.toEn': 'English',
+    'try.correct': 'صح.',
+    'try.wrong': 'مش بالظبط.',
+    'try.again': 'جرّب تاني',
+    'try.yours': 'إجابتك',
+    'try.right': 'الإجابة الصح',
+    'try.group': 'الاختيارات',
+
+    'numbers.kicker': 'الترم ده بالأرقام',
+    'numbers.title': 'الترم بتاعك<br><mark>متنظّم</mark> من دلوقتي.',
+    'numbers.n1': 'سؤال تدريب، وكل اختيار معاه سببه',
+    'numbers.n2': 'درس قصير بإنجليزي بسيط وعربي مصري',
+    'numbers.n3': 'flashcard بمراجعة متباعدة',
+    'numbers.n4': 'مواد الترم ده، ولسه فيه محاضرات جاية',
+    'numbers.note': 'Fall 2026–27 · اتعدّوا يوم 29 أكتوبر 2026 · وبيزيدوا مع كل محاضرة جديدة',
+
+    'lang.kicker': 'لغتك وشكلك',
+    'lang.title': '<span lang="en">English</span> أو عربي.<br>فاتح أو غامق.',
+    'lang.p': 'كل درس مكتوب بإنجليزي بسيط وبعربي مصري طبيعي. والمصطلحات بتفضل بالإنجليزي ومعاها شرحها.',
+    'lang.l1': 'غيّر اللغة في أي وقت — التطبيق كله بيتغيّر معاك',
+    'lang.l2': 'الأسئلة بالإنجليزي زي الامتحان، ومعاها زرار ترجمة',
+    'lang.l3': 'وضع فاتح ووضع غامق لمذاكرة آخر الليل',
+    'lang.drag': 'اسحب للمقارنة',
+    'lang.a': 'English · فاتح',
+    'lang.b': 'عربي · غامق',
+
+    'plan.kicker': 'خطة لنهارده',
+    'plan.title': 'خطة يومية <mark>بتتعلّم سرعتك.</mark>',
+    'plan.p': 'قولّه وقتك اليومي ومواعيد امتحاناتك مرة واحدة. Clearn بيوزّع الدروس والتدريب اللي فاضلين على أيام مذاكرتك.',
+    'plan.s1': '<b>لستة النهارده</b> — flashcards عليها الدور، ودروس، وتدريب',
+    'plan.s2': '<b>سرعتك الحقيقية</b> — بيتعلّمها من آخر 21 يوم',
+    'plan.s3': '<b>Flashcards متباعدة</b> — بترجع في ميعادها، فتفضل فاكر',
+    'plan.s4': '<b>هتخلّص في الوقت؟</b> — بيقولك قبل ما الامتحان يقولك',
+
+    'prep.kicker': 'موسم الامتحانات',
+    'prep.title': 'الكويز قرّب؟<br>خد <mark>المراجعة.</mark>',
+    'prep.p': 'كل مراجعة على محاضرات الكويز بالظبط.',
+    'prep.l1': '<b>اللي لازم تعرفه</b> — لو معاك 10 دقايق بس',
+    'prep.l2': '<b>ملخص ورسومات</b> للأفكار الصعبة',
+    'prep.l3': '<b>الفخاخ</b> اللي بتوقّع الناس',
+    'prep.l4': '<b>أسئلة جديدة أصعب</b> وامتحان تجريبي بالوقت',
+    'prep.note': '4 مراجعات لـ Quiz 1 الترم ده لحد دلوقتي.',
+
+    'gallery.kicker': 'معمول للموبايل',
+    'gallery.title': 'الترم كله في جيبك.',
+    'g.1': 'الرئيسية · عربي · غامق',
+    'g.2': 'درس بالليل',
+    'g.3': 'تدريب بالأسباب',
+    'g.4': 'Flashcards',
+    'g.5': 'خطتك',
+    'g.6': 'مراجعة الامتحان',
+    'g.7': 'تحدّى صاحبك',
+    'g.8': 'أول مرة: اختار موادك',
+
+    'earn.kicker': 'اكسبها',
+    'earn.title': 'تحدّى صاحبك.<br><span class="amber">وشوف مين يكسب.</span>',
+    'earn.p': 'ابعت 10 أسئلة في لينك. صاحبك بيحل نفس الأسئلة من غير تسجيل — وبعدها يقدر يبعتلك تحدّي.',
+    'earn.c1': 'streak يومي',
+    'earn.c2': 'رتبة بتطلع ومبتنزلش',
+    'earn.c3': 'Squad لحد 8',
+    'earn.c4': 'هدف أسبوعي للـ squad',
+    'earn.c5': 'صورة نتيجة للـ status',
+
+    'final.title': 'خليها <mark>Clear.</mark>',
+    'final.p': 'سجّل بحساب Google وابدأ بخطة النهارده.',
+
+    'foot.tag': '<bdi>Clear it. Learn it. Earn it.</bdi>',
+    'foot.disc': 'مشروع طلابي مستقل · مش خدمة رسمية من EELU.',
+    'foot.demo': 'الصور من التطبيق الحقيقي؛ والتقدّم اللي ظاهر فيها بيانات تجريبية.',
+    'foot.terms': 'الشروط',
+    'foot.privacy': 'الخصوصية',
+    'foot.by': 'تطوير:',
+
+    'img.dash': 'الصفحة الرئيسية في Clearn على لابتوب: خطة النهارده، مراجعات Quiz 1، وموادك',
+    'img.practice': 'سؤال تدريب على الموبايل، ومعاه سبب كل اختيار',
+    'img.lesson': 'درس قصير عن أنواع الـ interrupts الأربعة بالعربي',
+    'img.results': 'صفحة النتيجة وفيها تحدّى صاحبك: ابعت على WhatsApp، صورة النتيجة، انسخ اللينك',
+    'img.lessonDesktop': 'صفحة درس وتحت العنوان علامة المصدر L04 · p.5',
+    'img.dashEn': 'الرئيسية في Clearn بالإنجليزي، وضع فاتح',
+    'img.dashAr': 'الرئيسية في Clearn بالعربي، وضع غامق',
+    'img.plan': 'خطة المذاكرة: خطة النهارده واللي خلص متعلّم عليه',
+    'img.pace': 'سرعتك الحقيقية من آخر 21 يوم: 48 دقيقة في يوم المذاكرة، والشغل بياخد منك 0.6 من الوقت المتوقع',
+    'img.cards': 'Flashcard ومعاها زراير Again و Hard و Good و Easy',
+    'img.prep': 'مراجعة Quiz 1 لمادة Computer Graphics: اللي لازم تعرفه، تدريب بالإجابات، امتحان تجريبي بالوقت',
+    'img.card': 'صورة النتيجة: Operating Systems المحاضرة 4، 8 من 10. مين يجيب أكتر من 8/10؟',
+    'img.onboard': 'أول مرة: اختار المواد اللي بتاخدها',
+  },
+};
+
+/* The live demo question: os-l05-q002 from content/operating-systems/lectures/os-l05/questions/s01.yaml (unchanged). */
+window.CLEARN_QUESTION = {
+  answer: 'd',
+  source: 'L05 · p.4',
+  stem: {
+    en: 'Which protection mechanism ensures that no process can gain control of the CPU without eventually giving it back?',
+    ar: 'أنهي mechanism للـ protection بيضمن إن مفيش process تمسك الـ CPU من غير ما ترجّعه في الآخر؟',
+  },
+  options: [
+    {
+      id: 'a',
+      text: { en: 'Memory-addressing hardware', ar: 'الـ memory-addressing hardware' },
+      why: {
+        en: 'It keeps each process inside its own address space; it does not take the CPU back.',
+        ar: 'ده بيخلّي كل process جوه الـ address space بتاعها؛ مش بيرجّع الـ CPU.',
+      },
+    },
+    {
+      id: 'b',
+      text: { en: 'Device-control registers', ar: 'الـ device-control registers' },
+      why: {
+        en: 'Hiding them from users protects peripheral devices, not CPU time.',
+        ar: 'إخفاؤهم عن الـ users بيحمي الأجهزة الطرفية، مش وقت الـ CPU.',
+      },
+    },
+    {
+      id: 'c',
+      text: { en: 'The user ID of the process', ar: 'الـ user ID بتاع الـ process' },
+      why: {
+        en: 'A user ID tells the OS who owns the process; it does not limit CPU time.',
+        ar: 'الـ user ID بيعرّف نظام التشغيل مين صاحب الـ process؛ مش بيحدّد وقت الـ CPU.',
+      },
+    },
+    {
+      id: 'd',
+      text: { en: 'The timer', ar: 'الـ timer' },
+      why: {
+        en: 'Correct — when the timer runs out, control returns to the OS.',
+        ar: 'صح — لما الـ timer يخلص، التحكّم بيرجع لنظام التشغيل.',
+      },
+    },
+  ],
+  explanation: {
+    en: 'The timer ensures no process can keep the CPU forever: when it expires, an interrupt gives control back to the OS (Lecture 4).',
+    ar: 'الـ timer بيضمن إن مفيش process تفضل ماسكة الـ CPU على طول: لما يخلص، بيحصل interrupt يرجّع التحكّم لنظام التشغيل (المحاضرة الرابعة).',
+  },
+};

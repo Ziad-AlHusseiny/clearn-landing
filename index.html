@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clearn — Clear it. Learn it. Earn it.</title>
+<meta name="description" content="Short lessons in simple English and Egyptian Arabic, practice questions that explain every answer, and a daily plan that learns your pace.">
+<meta name="theme-color" content="#F5F6F8">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Clearn — Clear it. Learn it. Earn it.">
+<meta property="og:description" content="Every lecture, made clear: short lessons, practice that explains every answer, and a daily plan that learns your pace.">
+<meta property="og:url" content="https://ziad-alhusseiny.github.io/clearn-landing/">
+<meta property="og:image" content="https://ziad-alhusseiny.github.io/clearn-landing/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/plex-sans-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script>
+  // Pick the language before the first paint: ?lang=, then the saved choice, then the browser language.
+  (function () {
+    var lang = 'en';
+    try {
+      var q = new URLSearchParams(location.search).get('lang');
+      var s = localStorage.getItem('clearn-landing:lang');
+      lang = q === 'ar' || q === 'en' ? q : s === 'ar' || s === 'en' ? s : /^ar/i.test(navigator.language || '') ? 'ar' : 'en';
+    } catch (e) {}
+    var r = document.documentElement;
+    r.lang = lang;
+    r.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    if (lang === 'ar') r.classList.add('i18n-pending');
+    // Hide the hero until the intro animation takes over (main.js adds .fx); never longer than 3 s.
+    try { if (matchMedia('(prefers-reduced-motion: no-preference)').matches) r.classList.add('js-motion'); } catch (e) {}
+    setTimeout(function () { r.classList.remove('i18n-pending', 'js-motion'); }, 3000);
+  })();
+</script>
+<script defer src="vendor/gsap.min.js"></script>
+<script defer src="vendor/ScrollTrigger.min.js"></script>
+<script defer src="i18n.js"></script>
+<script defer src="main.js"></script>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+<div class="progress" aria-hidden="true"><span></span></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Clearn">
+      <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#0A6E6A"/><rect x="7.5" y="18" width="4.5" height="7" rx="1.5" fill="#fff" opacity=".55"/><rect x="13.75" y="13" width="4.5" height="12" rx="1.5" fill="#fff" opacity=".8"/><rect x="20" y="7" width="4.5" height="18" rx="1.5" fill="#fff"/></svg>
+      <span>Clearn</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#how" data-i18n="nav.how">How it works</a>
+      <a href="#try" data-i18n="nav.try">Try a question</a>
+      <a href="#features" data-i18n="nav.features">Features</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang-btn" type="button" data-lang-toggle data-i18n-attr="aria-label:nav.langLabel" aria-label="Switch to Arabic"><span data-i18n="nav.lang">عربي</span></button>
+      <a class="btn btn-primary btn-sm" href="https://clearn.vercel.app"><span class="long" data-i18n="cta.start">Start with Google</span><span class="short" data-i18n="cta.short">Start</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 1 · Hero -->
+  <section class="hero" id="top">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-copy">
+      <p class="eyebrow" data-hero><span class="pulse" aria-hidden="true"></span><span data-i18n="hero.eyebrow">Every term · now: Fall 2026–27</span></p>
+      <h1 class="hero-title" data-i18n="hero.title" data-split>Every lecture.<br>Made <mark>clear.</mark></h1>
+      <p class="hero-sub" data-hero data-i18n="hero.sub">Short lessons in simple English and Egyptian Arabic. Practice questions that explain every answer. A daily plan that learns your pace.</p>
+      <div class="hero-ctas" data-hero>
+        <a class="btn btn-primary btn-lg" href="https://clearn.vercel.app"><span data-i18n="cta.start">Start with Google</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost btn-lg" href="#how" data-i18n="hero.secondary">See how it works</a>
+      </div>
+    </div>
+
+    <div class="hero-stage" aria-label="Clearn on a laptop and a phone">
+      <div class="laptop">
+        <div class="laptop-screen">
+          <img src="img/dash-desktop.webp" width="1920" height="1200" alt="Clearn home on a laptop: today's plan, Quiz 1 reviews and your subjects" data-i18n-attr="alt:img.dash" fetchpriority="high">
+        </div>
+        <div class="laptop-base" aria-hidden="true"></div>
+      </div>
+      <div class="phone hero-phone">
+        <div class="phone-screen"><img src="img/practice.webp" width="780" height="1688" alt="A practice question on a phone, with the reason for each option" data-i18n-attr="alt:img.practice"></div>
+      </div>
+      <span class="float-chip chip-src mono" aria-hidden="true">L04 · p.5</span>
+      <span class="float-chip chip-streak" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5.3 1.8 1.2 2.8 2.2 3C10.7 9 11 6 12 3z"/></svg><span data-i18n="hero.streak">7-day streak</span></span>
+      <span class="float-chip chip-ok" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="hero.correct">Correct — the timer</span></span>
+    </div>
+  </section>
+
+  <!-- 2 · Subjects marquee -->
+  <section class="marquee" aria-label="Subjects">
+    <p class="marquee-label mono" data-i18n="marquee.label">8 subjects this term</p>
+    <div class="marquee-track" dir="ltr">
+      <div class="marquee-row">
+        <span class="subj"><b>CO</b>Computer Organization</span>
+        <span class="subj"><b>OS</b>Operating Systems</span>
+        <span class="subj"><b>DSP</b>Digital Signal Processing</span>
+        <span class="subj"><b>CG</b>Computer Graphics</span>
+        <span class="subj"><b>ES</b>Embedded Systems</span>
+        <span class="subj"><b>ACN</b>Advanced Computer Networks</span>
+        <span class="subj"><b>CT</b>Communication Technology</span>
+        <span class="subj"><b>LSE</b>Labs in Software Engineering</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · Clear it / Learn it / Earn it (pinned) -->
+  <section class="how" id="how">
+    <div class="wrap how-grid">
+      <div class="how-copy">
+        <p class="kicker" data-i18n="how.kicker">How it works</p>
+        <div class="how-bars" aria-hidden="true"><span><i></i></span><span><i></i></span><span><i></i></span></div>
+        <ol class="how-titles">
+          <li class="how-title is-active"><span class="mono" data-i18n="how.s1.k">01 · Clear it</span><b data-i18n="how.s1.t">Clear it.</b></li>
+          <li class="how-title"><span class="mono" data-i18n="how.s2.k">02 · Learn it</span><b data-i18n="how.s2.t">Learn it.</b></li>
+          <li class="how-title"><span class="mono" data-i18n="how.s3.k">03 · Earn it</span><b data-i18n="how.s3.t">Earn it.</b></li>
+        </ol>
+        <div class="how-paras">
+          <p data-i18n="how.s1.p">Each lecture becomes short lessons — one idea per lesson, in simple words, with the key points at the end.</p>
+          <p data-i18n="how.s2.p">Practice questions tell you why each option is right or wrong. Flashcards come back when it is time to review them.</p>
+          <p data-i18n="how.s3.p">Keep your streak, climb a rank that never drops, and challenge friends with the same questions.</p>
+        </div>
+      </div>
+      <div class="how-device">
+        <div class="phone phone-lg">
+          <div class="phone-screen">
+            <img class="how-screen" src="img/lesson-en-dark.webp" data-src-ar="img/lesson-ar.webp" width="780" height="1688" alt="A short lesson about the four classes of interrupts, in dark mode" data-i18n-attr="alt:img.lesson" loading="lazy">
+            <img class="how-screen" src="img/practice.webp" width="780" height="1688" alt="A practice question on a phone, with the reason for each option" data-i18n-attr="alt:img.practice" loading="lazy">
+            <img class="how-screen" src="img/results-en.webp" data-src-ar="img/results-ar-dark.webp" width="780" height="1688" alt="Results page with Challenge a friend: send on WhatsApp, result card, copy link" data-i18n-attr="alt:img.results" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · Statement (words light up while scrolling) -->
+  <section class="statement">
+    <div class="wrap">
+      <p class="statement-text" data-i18n="statement" data-split>Slides are long. Exams come fast. Clearn turns every lecture into <em>short lessons</em>, <em>real practice</em> and <em>a plan for today</em> — and every answer shows the slide page it came from.</p>
+    </div>
+  </section>
+
+  <!-- 5 · Proof: every answer has its slide page (pinned zoom on desktop) -->
+  <section class="proof" id="features">
+    <div class="wrap">
+      <header class="sec-head center" data-reveal>
+        <p class="kicker" data-i18n="proof.kicker">Trust every answer</p>
+        <h2 data-i18n="proof.title">Every answer shows its slide page.</h2>
+        <p class="lead" data-i18n="proof.p">Lessons, flashcards and questions carry a chip like <code>L04 · p.5</code> — Lecture 4, page 5. Tap it, see the slide, and check it yourself.</p>
+      </header>
+      <div class="proof-stage">
+      <div class="browser proof-browser">
+        <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser-url mono">clearn.vercel.app/learn/os-l04-s03</span></div>
+        <div class="browser-view">
+          <div class="proof-zoom">
+            <img src="img/lesson-desktop.webp" width="2880" height="1800" alt="A lesson page with the source chip L04 · p.5 under the title" data-i18n-attr="alt:img.lessonDesktop" loading="lazy">
+            <span class="proof-ring" aria-hidden="true"></span>
+          </div>
+          <div class="proof-call" aria-hidden="true">
+            <span class="proof-line"></span>
+            <div class="proof-card"><span class="mono">L04 · p.5</span><b data-i18n="proof.callT">Lecture 4 · page 5</b><span data-i18n="proof.callP">Tap the chip to open the slide.</span></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 + 7 · Night block: live question + numbers -->
+  <div class="night" data-night>
+    <section class="try" id="try">
+      <div class="wrap try-grid">
+        <div class="try-copy" data-reveal>
+          <p class="kicker" data-i18n="try.kicker">Try one real question</p>
+          <h2 data-i18n="try.title">Pick an answer.<br>See <mark>why.</mark></h2>
+          <p class="lead" data-i18n="try.p">This one is from Operating Systems, Lecture 5. After you answer, every option shows its reason — like all 2,756 questions in Clearn.</p>
+        </div>
+        <div class="qcard" data-quiz>
+          <!-- Filled by main.js; this static copy is what shows without JavaScript. -->
+          <div class="q-top"><span class="q-tag mono">CORE · MCQ</span><span class="q-src mono">L05 · p.4</span></div>
+          <p class="q-stem">Which protection mechanism ensures that no process can gain control of the CPU without eventually giving it back?</p>
+          <ol class="q-static"><li>Memory-addressing hardware</li><li>Device-control registers</li><li>The user ID of the process</li><li>The timer</li></ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="numbers">
+      <div class="wrap">
+        <header class="sec-head" data-reveal>
+          <p class="kicker" data-i18n="numbers.kicker">This term, counted</p>
+          <h2 data-i18n="numbers.title">Your term,<br>already <mark>organised.</mark></h2>
+        </header>
+        <div class="num-grid">
+          <div class="num num-big"><span class="num-val" data-count="2756">2,756</span><span class="num-label" data-i18n="numbers.n1">practice questions, each with the reason behind every option</span></div>
+          <div class="num"><span class="num-val" data-count="341">341</span><span class="num-label" data-i18n="numbers.n2">short lessons in simple English and Egyptian Arabic</span></div>
+          <div class="num"><span class="num-val" data-count="1354">1,354</span><span class="num-label" data-i18n="numbers.n3">flashcards with spaced review</span></div>
+          <div class="num"><span class="num-val" data-count="8">8</span><span class="num-label" data-i18n="numbers.n4">subjects this term, with more lectures on the way</span></div>
+        </div>
+        <p class="num-note mono" data-i18n="numbers.note">Fall 2026–27 · counted on 29 Oct 2026 · more come with every new lecture</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- 8 · Two languages, two themes (scroll / drag compare) -->
+  <section class="langs">
+    <div class="wrap split">
+      <div class="split-copy" data-reveal>
+        <p class="kicker" data-i18n="lang.kicker">Your language, your theme</p>
+        <h2 data-i18n="lang.title">English or <span lang="ar">عربي</span>.<br>Light or dark.</h2>
+        <p class="lead" data-i18n="lang.p">Every lesson is written in simple English and in natural Egyptian Arabic. Technical terms stay in English and get explained.</p>
+        <ul class="ticks">
+          <li data-i18n="lang.l1">Switch language any time — the whole app follows</li>
+          <li data-i18n="lang.l2">Questions stay in English, like the exam, with a translate button</li>
+          <li data-i18n="lang.l3">Light and dark mode for late-night study</li>
+        </ul>
+      </div>
+      <div class="compare-wrap">
+        <div class="phone phone-lg compare" data-compare role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Drag to compare" data-i18n-attr="aria-label:lang.drag">
+          <div class="phone-screen">
+            <img src="img/dash-en.webp" width="780" height="1688" alt="Clearn home in English, light mode" data-i18n-attr="alt:img.dashEn" loading="lazy">
+            <div class="compare-b"><img src="img/dash-ar-dark.webp" width="780" height="1688" alt="Clearn home in Arabic, dark mode" data-i18n-attr="alt:img.dashAr" loading="lazy"></div>
+            <span class="compare-handle" aria-hidden="true"><i></i></span>
+          </div>
+        </div>
+        <div class="compare-labels mono" dir="ltr"><span data-i18n="lang.a">English · light</span><span class="drag-hint" data-i18n="lang.drag">Drag to compare</span><span data-i18n="lang.b">عربي · dark</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · Plan that learns your pace -->
+  <section class="plan">
+    <div class="wrap split reverse">
+      <div class="split-copy" data-reveal>
+        <p class="kicker" data-i18n="plan.kicker">A plan for today</p>
+        <h2 data-i18n="plan.title">A daily plan that <mark>learns your pace.</mark></h2>
+        <p class="lead" data-i18n="plan.p">Tell it your daily time and exam dates once. Clearn spreads the remaining lessons and practice over your study days.</p>
+        <ol class="checks">
+          <li data-i18n="plan.s1"><b>Today's list</b> — due flashcards, lessons and practice</li>
+          <li data-i18n="plan.s2"><b>Your real pace</b> — learned from your last 21 days</li>
+          <li data-i18n="plan.s3"><b>Spaced flashcards</b> — they come back on time, so you remember</li>
+          <li data-i18n="plan.s4"><b>Will you finish on time?</b> — it tells you before the exam does</li>
+        </ol>
+      </div>
+      <div class="plan-visual">
+        <div class="browser plan-browser"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i></div><div class="browser-view"><img src="img/plan-desktop.webp" width="1920" height="1200" alt="My study plan: today's plan with the finished items checked" data-i18n-attr="alt:img.plan" loading="lazy"></div></div>
+        <img class="pace-card" src="img/pace.webp" width="720" height="756" alt="Your real pace, learned from the last 21 days: 48 min on a study day, and work takes you 0.6 times the estimate" data-i18n-attr="alt:img.pace" loading="lazy">
+        <div class="phone phone-sm plan-phone"><div class="phone-screen"><img src="img/cards.webp" width="780" height="1688" alt="A flashcard with Again, Hard, Good and Easy buttons" data-i18n-attr="alt:img.cards" loading="lazy"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · Exam reviews -->
+  <section class="prep">
+    <div class="wrap split">
+      <div class="split-copy" data-reveal>
+        <p class="kicker" data-i18n="prep.kicker">Exam season</p>
+        <h2 data-i18n="prep.title">Quiz coming?<br>Get the <mark>review.</mark></h2>
+        <p class="lead" data-i18n="prep.p">Each review covers exactly the lectures in the quiz.</p>
+        <ul class="prep-list">
+          <li data-i18n="prep.l1"><b>Must-know list</b> — if you only have 10 minutes</li>
+          <li data-i18n="prep.l2"><b>Summary and diagrams</b> for the hard ideas</li>
+          <li data-i18n="prep.l3"><b>The traps</b> that catch people</li>
+          <li data-i18n="prep.l4"><b>New, harder questions</b> and a timed mock exam</li>
+        </ul>
+        <p class="prep-note mono" data-i18n="prep.note">4 Quiz 1 reviews this term so far.</p>
+      </div>
+      <div class="prep-visual">
+        <div class="prep-stamp mono" aria-hidden="true">QUIZ 1</div>
+        <div class="phone phone-lg prep-phone"><div class="phone-screen"><img src="img/prep.webp" width="780" height="1688" alt="Quiz 1 review for Computer Graphics: must-know list, practice with answers, timed mock exam" data-i18n-attr="alt:img.prep" loading="lazy"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 · Phone gallery (pinned horizontal scroll) -->
+  <section class="gallery" aria-labelledby="gallery-title">
+    <div class="wrap sec-head" data-reveal>
+      <p class="kicker" data-i18n="gallery.kicker">Made for your phone</p>
+      <h2 id="gallery-title" data-i18n="gallery.title">Your whole term, in your pocket.</h2>
+    </div>
+    <div class="gallery-scroller">
+      <div class="gallery-track">
+        <figure class="g-item"><div class="phone"><div class="phone-screen"><img src="img/dash-ar-dark.webp" width="780" height="1688" alt="" loading="lazy"></div></div><figcaption data-i18n="g.1">Home · Arabic · dark</figcaption></figure>
+        <figure class="g-item"><div class="phone"><div class="phone-screen"><img src="img/lesson-en-dark.webp" width="780" height="1688" alt="" loading="lazy"></div></div><figcaption data-i18n="g.2">A lesson at night</figcaption></figure>
+        <figure class="g-item"><div class="phone"><div class="phone-screen"><img src="img/practice.webp" width="780" height="1688" alt="" loading="lazy"></div></div><figcaption data-i18n="g.3">Practice with reasons</figcaption></figure>
+        <figure class="g-item"><div class="phone"><div class="phone-screen"><img src="img/cards.webp" width="780" height="1688" alt="" loading="lazy"></div></div><figcaption data-i18n="g.4">Flashcards</figcaption></figure>
+        <figure class="g-item"><div class="phone"><div class="phone-screen"><img src="img/plan.webp" width="780" height="1688" alt="" loading="lazy"></div></div><figcaption data-i18n="g.5">Your plan</figcaption></figure>
+        <figure class="g-item"><div class="phone"><div class="phone-screen"><img src="img/prep.webp" width="780" height="1688" alt="" loading="lazy"></div></div><figcaption data-i18n="g.6">Exam review</figcaption></figure>
+        <figure class="g-item"><div class="phone"><div class="phone-screen"><img src="img/results-en.webp" data-src-ar="img/results-ar-dark.webp" width="780" height="1688" alt="" loading="lazy"></div></div><figcaption data-i18n="g.7">Challenge a friend</figcaption></figure>
+        <figure class="g-item"><div class="phone"><div class="phone-screen"><img src="img/onboard-en.webp" data-src-ar="img/onboard-ar.webp" width="780" height="1688" alt="" loading="lazy"></div></div><figcaption data-i18n="g.8">First visit: pick your subjects</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 + 13 · Night block: challenge + final call -->
+  <div class="night" data-night>
+    <section class="earn">
+      <div class="earn-glow" aria-hidden="true"></div>
+      <div class="wrap split">
+        <div class="split-copy" data-reveal>
+          <p class="kicker" data-i18n="earn.kicker">Earn it</p>
+          <h2 data-i18n="earn.title">Challenge a friend.<br><span class="amber">See who wins.</span></h2>
+          <p class="lead" data-i18n="earn.p">Send 10 questions as a link. Your friend plays the same questions without signing in — then can send a challenge back.</p>
+          <ul class="pills">
+            <li data-i18n="earn.c1">Daily streak</li>
+            <li data-i18n="earn.c2">A rank that only goes up</li>
+            <li data-i18n="earn.c3">Squads of up to 8</li>
+            <li data-i18n="earn.c4">Weekly squad goal</li>
+            <li data-i18n="earn.c5">A result card for your status</li>
+          </ul>
+        </div>
+        <div class="earn-visual">
+          <div class="result-card"><img src="img/resultcard-en.webp" data-src-ar="img/resultcard-ar.webp" width="900" height="1125" alt="Result card: Operating Systems Lecture 4, 8 out of 10. Can you beat 8/10?" data-i18n-attr="alt:img.card" loading="lazy"></div>
+          <div class="phone phone-sm earn-phone"><div class="phone-screen"><img src="img/results-en.webp" data-src-ar="img/results-ar-dark.webp" width="780" height="1688" alt="Results page with Challenge a friend: send on WhatsApp, result card, copy link" data-i18n-attr="alt:img.results" loading="lazy"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap final-inner">
+        <div class="final-bars" aria-hidden="true"><span></span><span></span><span></span></div>
+        <h2 class="final-title" data-i18n="final.title" data-split>Make it <mark>clear.</mark></h2>
+        <p class="lead" data-i18n="final.p">Sign in with Google and start with today's plan.</p>
+        <a class="btn btn-primary btn-xl" href="https://clearn.vercel.app"><span data-i18n="cta.start">Start with Google</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <p class="final-url mono">clearn.vercel.app</p>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="wrap foot-inner">
+        <div class="foot-brand">
+          <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#3CC4B6"/><rect x="7.5" y="18" width="4.5" height="7" rx="1.5" fill="#06201E" opacity=".55"/><rect x="13.75" y="13" width="4.5" height="12" rx="1.5" fill="#06201E" opacity=".8"/><rect x="20" y="7" width="4.5" height="18" rx="1.5" fill="#06201E"/></svg>
+          <span><b>Clearn</b><small data-i18n="foot.tag">Clear it. Learn it. Earn it.</small></span>
+        </div>
+        <div class="foot-notes">
+          <p data-i18n="foot.disc">Independent student project · not an official EELU service.</p>
+          <p data-i18n="foot.demo">Screens are from the real app; the study progress in them is demo data.</p>
+        </div>
+        <nav class="foot-links" aria-label="Legal">
+          <a href="https://clearn.vercel.app/terms.html" data-i18n="foot.terms">Terms</a>
+          <a href="https://clearn.vercel.app/privacy.html" data-i18n="foot.privacy">Privacy</a>
+        </nav>
+      </div>
+      <div class="wrap credit">
+        <p class="credit-by"><span data-i18n="foot.by">Developed by</span> <b dir="ltr">Ziad Al-Husseiny</b></p>
+        <div class="credit-links">
+          <a class="credit-link" href="https://github.com/Ziad-AlHusseiny" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            <span dir="ltr">github.com/Ziad-AlHusseiny</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</main>
+</body>
+</html>
